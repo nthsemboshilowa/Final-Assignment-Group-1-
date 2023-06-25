@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using TicketToRide.Enums;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Card", menuName = "Destination Cards")]
-public class DestinationCard : ScriptableObject
+
+public class DestinationCard : MonoBehaviour
 {
 
     public City Origin;

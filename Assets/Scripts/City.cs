@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 using UnityEngine.UI;
-using static City;
 
 
 public class City : MonoBehaviour
 {
-
     public CityName Name;
     public enum CityName
     {

@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TrainColour;
 
-[CreateAssetMenu(fileName = "New Card", menuName = "Train Cards")]
-public class TrainCard : ScriptableObject
+
+public class TrainCard : MonoBehaviour
 {
-
-    public TrainCardColour colour;
+    public TrainColor Colour;
 
     public Sprite image;
 }
 
-public enum TrainCardColour
+public enum TrainColor
 {
-    Blue, Red, Green, Yellow, Black, Purple, Orange, White, Multi
+    Blue, Red, Green, Yellow, Black, Purple, Orange, White, Locomotive
 }
