@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a52534570ce6a7e4facb683c85b45645
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Domma
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d3c5e499e2eb985489b4100380bfd045, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
