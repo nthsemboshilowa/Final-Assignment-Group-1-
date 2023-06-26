@@ -104,5 +104,10 @@ public class GameManager : MonoBehaviour
        // deckSizeText.text = deck.Count.ToString();
        // discardPileText.text = discardPile.Count.ToString();
     }
+
+    public void Done()
+    {
+
+    }
 }
 

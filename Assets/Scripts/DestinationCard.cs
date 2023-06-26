@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class DestinationCard : MonoBehaviour
@@ -11,7 +12,7 @@ public class DestinationCard : MonoBehaviour
 
     public int PointValue;
 
-    public Sprite image;
+    public Image image;
 
 
     public DestinationCard(City origin, City destination, int points)

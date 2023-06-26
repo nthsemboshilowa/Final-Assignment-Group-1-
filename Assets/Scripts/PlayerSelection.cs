@@ -13,6 +13,9 @@ public class PlayerSelection : MonoBehaviour
     public InputField player1NameInputField;
     public InputField player2NameInputField;
 
+    public InputField player1TagInputField;
+    public InputField player2TagInputField;
+
     private void Start()
     {
         player1Button.onClick.AddListener(SelectPlayer1);
@@ -20,6 +23,9 @@ public class PlayerSelection : MonoBehaviour
 
         player1NameInputField.onValueChanged.AddListener(UpdatePlayer1Name);
         player2NameInputField.onValueChanged.AddListener(UpdatePlayer2Name);
+
+        player1TagInputField.onValueChanged.AddListener(UpdatePlayer1Name);
+        player2TagInputField.onValueChanged.AddListener(UpdatePlayer2Name);
     }
 
     public void SelectPlayer1()
@@ -28,6 +34,7 @@ public class PlayerSelection : MonoBehaviour
         player2Button.interactable = false;
 
         string playerName = player1NameInputField.text;
+        string playerTag = player1TagInputField.text;
         player1Turn.Name = playerName;
 
         player1Turn.StartPlayerTurn();
@@ -39,6 +46,7 @@ public class PlayerSelection : MonoBehaviour
         player2Button.interactable = true;
 
         string playerName = player2NameInputField.text;
+        string playerTag = player2TagInputField.text;
         player2Turn.Name = playerName;
 
         player2Turn.StartPlayerTurn();
