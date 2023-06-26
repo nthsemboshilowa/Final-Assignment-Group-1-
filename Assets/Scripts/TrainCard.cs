@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static TrainColour;
+using UnityEngine.UI;
 
 
 public class TrainCard : MonoBehaviour
 {
     public TrainColor Colour;
 
-    public Sprite image;
+    public Image image;
+
+    public int handIndex;
 }
 
 public enum TrainColor

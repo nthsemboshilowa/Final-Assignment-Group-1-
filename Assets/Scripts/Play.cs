@@ -9,7 +9,7 @@ public class Play : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("MainBoard");
+        SceneManager.LoadScene("Board");
     }
 
 

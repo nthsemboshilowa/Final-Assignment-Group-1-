@@ -7,8 +7,7 @@ using System.Text;
     public class CityLength : MonoBehaviour
     {
 
-        public City Origin;
-        public City Destination;
+    public City City;
 
         public int Length;
     }

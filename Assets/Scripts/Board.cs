@@ -1,22 +1,25 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static TrainColour;
 
 public class Board : MonoBehaviour
 {
+    [SerializeField]
     public BoardRouteCollection Routes = new BoardRouteCollection();
 
+    [SerializeField]
     public List<DestinationCard> DestinationCards = new List<DestinationCard>();
 
+    [SerializeField]
     public List<TrainCard> Deck = new List<TrainCard>();
 
-    public List<TrainCard> DiscardPile  = new List<TrainCard>();
+    [SerializeField]
+    public List<TrainCard> DiscardPile = new List<TrainCard>();
 
-    public List<TrainCard> ShownCards  = new List<TrainCard>();
+    [SerializeField]
+    public List<TrainCard> ShownCards = new List<TrainCard>();
 
-    public Board()
+    private void Awake()
     {
         CreateBoardRoutes();
         CreateDestinationCards();
@@ -94,8 +97,9 @@ public class Board : MonoBehaviour
         DestinationCards.Add(new DestinationCard(DestinationCard.City.LosAngeles, DestinationCard.City.Miami, 20));
         DestinationCards.Add(new DestinationCard(DestinationCard.City.Portland, DestinationCard.City.Phoenix, 11));
 
-        //DestinationCards = DestinationCards.Shuffle();
+        DestinationCards = DestinationCards.Shuffle();
     }
+
 
     private void CreateTrainCardDeck()
     {
@@ -110,7 +114,7 @@ public class Board : MonoBehaviour
         deck.AddRange(CreateSingleColorCollection(TrainColor.White, 12));
         deck.AddRange(CreateSingleColorCollection(TrainColor.Locomotive, 14));
 
-       // deck.Shuffle();
+        deck.Shuffle();
 
         this.Deck = deck;
     }
@@ -151,10 +155,10 @@ public class Board : MonoBehaviour
 
         FlipShownCards();
 
-        var locomotiveCount = ShownCards.Where(x => x.Colour == TrainColor.Locomotive).Count();
+        var locomotiveCount = ShownCards.FindAll(x => x.Colour == TrainColor.Locomotive).Count;
         while (locomotiveCount >= 3)
         {
-            Console.WriteLine("Shown cards has 3 or more locomotives! Burning the shown cards.");
+            Debug.Log("Shown cards has 3 or more locomotives! Burning the shown cards.");
 
             //Discard the shown cards
             DiscardPile.AddRange(ShownCards);
