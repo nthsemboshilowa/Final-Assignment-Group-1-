@@ -4420,7 +4420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLAYER 1
+  m_Text: PLAYER NAME
 --- !u!222 &275261181
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4925,7 +4925,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 341637715}
-  m_TextComponent: {fileID: 0}
+  m_TextComponent: {fileID: 275261180}
   m_Placeholder: {fileID: 0}
   m_ContentType: 0
   m_InputType: 0
@@ -18455,6 +18455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c117af6e2e3ab4684d320e7bbb29eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obj_txt: {fileID: 1169032494}
+  display: {fileID: 341637717}
 --- !u!4 &1524751521
 Transform:
   m_ObjectHideFlags: 0
@@ -22574,7 +22576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1914502767
 RectTransform:
   m_ObjectHideFlags: 0

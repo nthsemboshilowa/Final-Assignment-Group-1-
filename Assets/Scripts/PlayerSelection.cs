@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class PlayerSelection : MonoBehaviour
 {
-
     public Button player1Button;
     public Button player2Button;
 
@@ -24,8 +23,9 @@ public class PlayerSelection : MonoBehaviour
         player1NameInputField.onValueChanged.AddListener(UpdatePlayer1Name);
         player2NameInputField.onValueChanged.AddListener(UpdatePlayer2Name);
 
-        player1TagInputField.onValueChanged.AddListener(UpdatePlayer1Name);
-        player2TagInputField.onValueChanged.AddListener(UpdatePlayer2Name);
+        player1TagInputField.onValueChanged.AddListener(UpdatePlayer1Tag);
+        player2TagInputField.onValueChanged.AddListener(UpdatePlayer2Tag);
+
     }
 
     public void SelectPlayer1()
@@ -52,7 +52,6 @@ public class PlayerSelection : MonoBehaviour
         player2Turn.StartPlayerTurn();
     }
 
-
     public void StartPlayerTurn(PlayerTurn playerTurn)
     {
         // Any additional setup for the player's turn can be done here
@@ -68,5 +67,26 @@ public class PlayerSelection : MonoBehaviour
     {
         player2Turn.Name = newName;
     }
+
+    private void UpdatePlayer1Tag(string newTag)
+    {
+        player1TagInputField.text = newTag;
+
+        // Store the value of player1TagInputField in PlayerPrefs
+        PlayerPrefs.SetString("Player1Tag", newTag);
+        PlayerPrefs.Save();
+    }
+
+    private void UpdatePlayer2Tag(string newTag)
+    {
+        player2TagInputField.text = newTag;
+    }
+
+    private void Update()
+    {
+        player1TagInputField.text = player1NameInputField.text;
+        player2TagInputField.text = player2NameInputField.text;
+    }
 }
+
 
