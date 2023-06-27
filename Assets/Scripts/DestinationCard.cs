@@ -9,12 +9,24 @@ public class DestinationCard : MonoBehaviour
 
     public City Origin;
     public City Destination;
-
     public int PointValue;
+    public Image OriginImage;
+    public Image DestinationImage;
 
-    public Image image;
+    private bool isShowingOriginImage = true;
 
+    public void SetImages(Sprite originSprite, Sprite destinationSprite)
+    {
+        OriginImage.sprite = originSprite;
+        DestinationImage.sprite = destinationSprite;
+    }
 
+    public void ToggleImage()
+    {
+        isShowingOriginImage = !isShowingOriginImage;
+        OriginImage.gameObject.SetActive(isShowingOriginImage);
+        DestinationImage.gameObject.SetActive(!isShowingOriginImage);
+    }
     public DestinationCard(City origin, City destination, int points)
     {
         Origin = origin;

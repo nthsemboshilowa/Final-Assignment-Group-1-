@@ -37,6 +37,7 @@ public class PlayerTurn : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 EndPlayerTurn();
+
             }
         }
     }
@@ -78,7 +79,12 @@ public class PlayerTurn : MonoBehaviour
         // Logic for drawing destination tickets goes here
         Debug.Log("Drawing destination tickets");
 
-        EndPlayerTurn();
+        // Call the DrawTicket method of the DestinationTicketDeck
+        DestinationTicketDeck ticketDeck = FindObjectOfType<DestinationTicketDeck>();
+        if (ticketDeck != null)
+        {
+            ticketDeck.DrawTicket();
+        }
     }
 
     public void StartPlayerTurn()
@@ -88,7 +94,7 @@ public class PlayerTurn : MonoBehaviour
         Debug.Log("Player's turn has started");
     }
 
-    private void EndPlayerTurn()
+    public void EndPlayerTurn()
     {
         isPlayerTurn = false;
         // Reset any necessary variables or perform end-of-turn tasks here

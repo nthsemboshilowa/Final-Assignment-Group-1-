@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class City : MonoBehaviour
 {
     public CityName Name;
+    public Image CityPrefab;
     public enum CityName
     {
         Atlanta,
