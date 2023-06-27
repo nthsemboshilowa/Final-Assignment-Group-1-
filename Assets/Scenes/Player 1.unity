@@ -8418,6 +8418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c117af6e2e3ab4684d320e7bbb29eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1Scene: Player 1
   playerTag1: {fileID: 1169032494}
   playerTag2: {fileID: 357128626}
   display1: {fileID: 341637717}

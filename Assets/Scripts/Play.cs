@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
+using Unity.VisualScripting;
 
 public class Play : MonoBehaviour
 {
-    public string player1Scene;
+    public GameObject playerHandDisplay;
 
     public Text playerTag1;
     public Text playerTag2;
@@ -95,6 +97,11 @@ public class Play : MonoBehaviour
     {
         SceneManager.LoadScene("Player Switch");
         previousScene = "Player 2";
+    }
+
+    public void Destroy()
+    {
+        Destroy(playerHandDisplay);
     }
 }
 
