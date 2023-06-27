@@ -105,9 +105,6 @@ public class GameManager : MonoBehaviour
        // discardPileText.text = discardPile.Count.ToString();
     }
 
-    public void Done()
-    {
 
-    }
 }
 

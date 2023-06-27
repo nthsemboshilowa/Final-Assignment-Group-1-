@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using UnityEngine.SceneManagement;
 
 public class PlayerTurn : MonoBehaviour
 {
@@ -91,6 +93,9 @@ public class PlayerTurn : MonoBehaviour
         isPlayerTurn = false;
         // Reset any necessary variables or perform end-of-turn tasks here
         Debug.Log("Player's turn has ended");
+        SceneManager.LoadScene("Player Switch");
+
+
     }
 }
 

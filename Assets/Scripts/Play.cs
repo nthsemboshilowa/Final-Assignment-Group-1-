@@ -4,21 +4,64 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class Play : MonoBehaviour
 {
-    public Text obj_txt;
-    public InputField display;
+    public string player1Scene;
+
+    public Text playerTag1;
+    public Text playerTag2;
+
+    public InputField display1;
+    public InputField display2;
+
+    public bool justPlayed = true;
+    public GameObject playerName1;
+    public GameObject playerName2;
+
+    private string previousScene = "";
 
     private void Start()
     {
-        obj_txt.text = PlayerPrefs.GetString("Player1Tag");
+        playerTag1.text = PlayerPrefs.GetString("Player1Tag");
+        playerTag2.text = PlayerPrefs.GetString("Player2Tag");
+        display1.text = PlayerPrefs.GetString("Player1Tag");
+        display2.text = PlayerPrefs.GetString("Player2Tag");
+
+        previousScene = PlayerPrefs.GetString("PreviousScene", "");
+
+        if (SceneManager.GetActiveScene().name == "Player Switch")
+        {
+            if (previousScene == "Player 1")
+            {
+                playerName1.SetActive(false);
+            }
+
+        }
+
+        if (SceneManager.GetActiveScene().name == "Player Switch")
+        {
+
+            if (previousScene == "Player 2")
+            {
+                playerName2.SetActive(false);
+            }
+        }
     }
 
-    private void Create()
+    private void Update()
     {
-        obj_txt.text = display.text;
-        PlayerPrefs.SetString("Player1Tag", obj_txt.text);
+        playerTag1.text = display1.text;
+        playerTag2.text = display2.text;
+        PlayerPrefs.SetString("Player1Tag", display1.text);
+        PlayerPrefs.SetString("Player2Tag", display2.text);
+        PlayerPrefs.SetString("Player1Tag", playerTag1.text);
+        PlayerPrefs.SetString("Player2Tag", playerTag2.text);
+        PlayerPrefs.Save();
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetString("PreviousScene", SceneManager.GetActiveScene().name);
         PlayerPrefs.Save();
     }
 
@@ -31,11 +74,27 @@ public class Play : MonoBehaviour
     {
         SceneManager.LoadScene("Player 1");
     }
-    
+
     public void Player2()
     {
         SceneManager.LoadScene("Player 2");
     }
 
+    public void PlayerChoice()
+    {
+        SceneManager.LoadScene("Player Switch");
+    }
 
+    public void Player1Done()
+    {
+        SceneManager.LoadScene("Player Switch");
+        previousScene = "Player 1";
+    }
+
+    public void Player2Done()
+    {
+        SceneManager.LoadScene("Player Switch");
+        previousScene = "Player 2";
+    }
 }
+
